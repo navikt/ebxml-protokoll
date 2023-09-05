@@ -7,7 +7,7 @@
 
     <artifactId>ebxml-protokoll</artifactId>
     <name>Java representasjon av ebxml protokoll</name>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
     <packaging>jar</packaging>
 
     <distributionManagement>
