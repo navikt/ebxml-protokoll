@@ -60,51 +60,48 @@
             <artifactId>jaxb-xjc</artifactId>
             <version>2.2.11</version>
         </dependency>
+		<dependency>
+			<groupId>com.github.labai</groupId>
+			<artifactId>labai-jsr305x-annotations</artifactId>
+			<version>0.0.2</version>
+		</dependency>
     </dependencies>
 
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>jaxb2-maven-plugin</artifactId>
-                <version>2.5.0</version>
-                <executions>
-                    <execution>
-                        <configuration>
-                            <sources>
-                                <source>src/main/resources/xsd/</source>
-                            </sources>
-                            <xjbSources>
-                                <xjbSource>src/main/resources/xjb/</xjbSource>
-                            </xjbSources>
-                            <encoding>${project.build.sourceEncoding}</encoding>
-                            <extension>true</extension>
-                            <arguments>-Xxew</arguments>
-                        </configuration>
-                        <goals>
-                            <goal>xjc</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.github.jaxb-xew-plugin</groupId>
-                        <artifactId>jaxb-xew-plugin</artifactId>
-                        <version>1.11</version>
-                    </dependency>
-                    <!--
-                     | We need to update the jaxb-xjc dependency from v2.1.13 to v2.2.11
-                     | used by the jaxb-xew-plugin (v2.1.13 does not have the required
-                     | method com.sun.codemodel.JAnnotatable.annotations()Ljava/util/Collection).
-                     -->
-                    <dependency>
-                        <groupId>com.sun.xml.bind</groupId>
-                        <artifactId>jaxb-xjc</artifactId>
-                        <version>2.2.11</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
+			<!-- The code is generated with this plugin configuration and manualy corrected after wrongfull generation of NonNull on import statements -->
+			<!--plugin>
+				<groupId>org.jvnet.jaxb</groupId>
+				<artifactId>jaxb-maven-plugin</artifactId>
+				<version>2.0.4</version>
+				<configuration>
+					<args>
+						<arg>-extension</arg>
+						<arg>-XJsr305Annotations</arg>
+						<arg>-XJsr305Annotations:generateListItemNonnull=true</arg>
+					</args>
+				</configuration>
+				<executions>
+				  <execution>
+					<goals>
+					  <goal>generate</goal>
+					</goals>
+				  </execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>com.github.labai</groupId>
+						<artifactId>labai-jsr305-jaxb-plugin</artifactId>
+						<version>0.0.5</version>
+					</dependency>
+					<dependency>
+						<groupId>com.github.labai</groupId>
+						<artifactId>labai-jsr305x-annotations</artifactId>
+						<version>0.0.2</version>
+					</dependency>
+				</dependencies>
+			</plugin-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>

@@ -1,6 +1,6 @@
 <bindings xmlns="http://java.sun.com/xml/ns/jaxb"
 xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2.0">
-	<bindings schemaLocation="../xsd/cpp-cpa-2_0.xsd" node="/xs:schema">
+	<bindings schemaLocation="cpp-cpa-2_0.xsd" node="/xs:schema">
 		<bindings node="//xs:attributeGroup[@name='xlink.grp']/xs:attribute[@ref='xlink:type']">
 		  <property name="XLinkType"/>
 		</bindings>
