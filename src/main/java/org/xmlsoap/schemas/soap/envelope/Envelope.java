@@ -18,6 +18,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAnyAttribute;
 import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
 import com.github.labai.jsr305x.api.NotNull;
@@ -52,6 +53,7 @@ import org.w3c.dom.Element;
     "body",
     "any"
 })
+@XmlRootElement(name = "Envelope")
 public class Envelope
     implements Serializable
 {
