@@ -17,7 +17,7 @@ package nl.clockwork.ebms.jaxb;
 
 import java.util.Date;
 
-import javax.xml.bind.annotation.adapters.XmlAdapter;
+import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 
 public class EbMSDateTimeAdapter extends XmlAdapter<String,Date>
 {

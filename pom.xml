@@ -32,7 +32,7 @@
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>jaxb-runtime</artifactId>
-            <version>2.4.0-b180830.0438</version>
+            <version>4.0.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -51,15 +51,10 @@
             <artifactId>commons-beanutils</artifactId>
             <version>1.11.0</version>
         </dependency>
-        <!--
-         | We need to update the jaxb-xjc dependency from v2.1.13 to v2.2.11
-         | used by the jaxb-xew-plugin (v2.1.13 does not have the required
-         | method com.sun.codemodel.JAnnotatable.annotations()Ljava/util/Collection).
-         -->
         <dependency>
-            <groupId>com.sun.xml.bind</groupId>
-            <artifactId>jaxb-xjc</artifactId>
-            <version>2.2.11</version>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
+            <version>4.0.0</version>
         </dependency>
 		<dependency>
 			<groupId>com.github.labai</groupId>

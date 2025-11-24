@@ -5,6 +5,6 @@
 // Generated on: 2023.09.04 at 02:30:27 PM CEST 
 //
 
-@javax.xml.bind.annotation.XmlSchema(namespace = "http://www.oasis-open.org/committees/ebxml-msg/schema/msg-header-2_0.xsd", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+@jakarta.xml.bind.annotation.XmlSchema(namespace = "http://www.oasis-open.org/committees/ebxml-msg/schema/msg-header-2_0.xsd", elementFormDefault = jakarta.xml.bind.annotation.XmlNsForm.QUALIFIED)
 @com.github.labai.jsr305x.api.NullableByDefault
 package org.oasis_open.committees.ebxml_msg.schema.msg_header_2_0;

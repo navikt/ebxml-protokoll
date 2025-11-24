@@ -1,8 +1,8 @@
 package no.nav.emottak.utils.xml;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Unmarshaller;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
@@ -12,7 +12,7 @@ import java.io.StringWriter;
 public class Marshaller {
 
     private JAXBContext jaxbContext;
-    private javax.xml.bind.Marshaller marshaller;
+    private jakarta.xml.bind.Marshaller marshaller;
     private Unmarshaller unmarshaller;
 
     public Marshaller() {
