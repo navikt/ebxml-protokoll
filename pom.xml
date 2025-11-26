@@ -7,7 +7,7 @@
 
     <artifactId>ebxml-protokoll</artifactId>
     <name>Java representasjon av ebxml protokoll</name>
-    <version>0.0.7</version>
+    <version>0.0.8-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <distributionManagement>
@@ -30,37 +30,21 @@
 
     <dependencies>
         <dependency>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
+            <version>4.0.0</version>
+        </dependency>
+        <dependency>
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>jaxb-runtime</artifactId>
             <version>4.0.0</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>com.github.jaxb-xew-plugin</groupId>
-            <artifactId>jaxb-xew-plugin</artifactId>
-            <version>1.11</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>commons-beanutils</groupId>
-                    <artifactId>commons-beanutils</artifactId>
-                </exclusion>
-            </exclusions>
+        <dependency><!-- @NotNull annotations in generated code -->
+            <groupId>com.github.labai</groupId>
+            <artifactId>labai-jsr305x-annotations</artifactId>
+            <version>0.0.2</version>
         </dependency>
-        <dependency>
-            <groupId>commons-beanutils</groupId>
-            <artifactId>commons-beanutils</artifactId>
-            <version>1.11.0</version>
-        </dependency>
-        <dependency>
-            <groupId>jakarta.xml.bind</groupId>
-            <artifactId>jakarta.xml.bind-api</artifactId>
-            <version>4.0.0</version>
-        </dependency>
-		<dependency>
-			<groupId>com.github.labai</groupId>
-			<artifactId>labai-jsr305x-annotations</artifactId>
-			<version>0.0.2</version>
-		</dependency>
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>
