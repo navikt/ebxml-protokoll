@@ -5,6 +5,6 @@
 // Generated on: 2023.09.04 at 02:30:27 PM CEST 
 //
 
-@javax.xml.bind.annotation.XmlSchema(namespace = "http://www.w3.org/2009/xmldsig11#", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+@jakarta.xml.bind.annotation.XmlSchema(namespace = "http://www.w3.org/2009/xmldsig11#", elementFormDefault = jakarta.xml.bind.annotation.XmlNsForm.QUALIFIED)
 @com.github.labai.jsr305x.api.NullableByDefault
 package org.w3._2009.xmldsig11_;

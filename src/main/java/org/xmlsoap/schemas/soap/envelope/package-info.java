@@ -5,6 +5,6 @@
 // Generated on: 2023.09.04 at 02:30:27 PM CEST 
 //
 
-@javax.xml.bind.annotation.XmlSchema(namespace = "http://schemas.xmlsoap.org/soap/envelope/")
+@jakarta.xml.bind.annotation.XmlSchema(namespace = "http://schemas.xmlsoap.org/soap/envelope/")
 @com.github.labai.jsr305x.api.NullableByDefault
 package org.xmlsoap.schemas.soap.envelope;

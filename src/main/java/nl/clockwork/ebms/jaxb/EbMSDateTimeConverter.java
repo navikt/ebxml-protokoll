@@ -21,7 +21,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
-import javax.xml.bind.DatatypeConverter;
+import jakarta.xml.bind.DatatypeConverter;
 
 public class EbMSDateTimeConverter
 {

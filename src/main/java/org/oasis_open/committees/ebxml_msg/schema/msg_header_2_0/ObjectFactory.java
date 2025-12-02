@@ -9,10 +9,10 @@
 package org.oasis_open.committees.ebxml_msg.schema.msg_header_2_0;
 
 import java.util.Date;
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.XmlElementDecl;
-import javax.xml.bind.annotation.XmlRegistry;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.annotation.XmlElementDecl;
+import jakarta.xml.bind.annotation.XmlRegistry;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.namespace.QName;
 import org.w3._2001.xmlschema.Adapter1;
 
