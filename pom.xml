@@ -7,7 +7,7 @@
 
     <artifactId>ebxml-protokoll</artifactId>
     <name>Java representasjon av ebxml protokoll</name>
-    <version>0.0.7</version>
+    <version>0.0.8</version>
     <packaging>jar</packaging>
 
     <distributionManagement>
@@ -32,12 +32,12 @@
         <dependency>
             <groupId>jakarta.xml.bind</groupId>
             <artifactId>jakarta.xml.bind-api</artifactId>
-            <version>4.0.0</version>
+            <version>4.0.2</version>
         </dependency>
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>jaxb-runtime</artifactId>
-            <version>4.0.0</version>
+            <version>4.0.6</version>
             <scope>provided</scope>
         </dependency>
         <dependency><!-- @NotNull annotations in generated code -->
