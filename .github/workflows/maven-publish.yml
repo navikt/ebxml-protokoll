@@ -23,6 +23,12 @@ jobs:
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         settings-path: ${{ github.workspace }} # location for the settings.xml file
 
+    - name: Set version from release tag
+      if: github.event_name == 'release'
+      run: |
+        VERSION=${GITHUB_REF_NAME#v}
+        mvn -B versions:set -DnewVersion="$VERSION" -DgenerateBackupPoms=false
+
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
