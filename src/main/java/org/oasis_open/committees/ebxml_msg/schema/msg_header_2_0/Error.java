@@ -198,6 +198,13 @@ public class Error
 
     /**
      * Gets the value of the errorCode property.
+     *
+     * <p>Manually patched: the XSD declares attributeFormDefault="qualified", but real-world senders
+     * consistently emit this attribute unqualified (e.g. errorCode="T01" instead of eb:errorCode="T01").
+     * Such unqualified attributes fail to bind to the typed {@link #errorCode} field and are instead
+     * captured by the {@link #otherAttributes} catch-all ({@code @XmlAnyAttribute}). Fall back to that
+     * map so both qualified and unqualified senders work, instead of throwing an NPE from the
+     * {@code @NotNull} contract below.
      * 
      * @return
      *     possible object is
@@ -206,6 +213,12 @@ public class Error
      */
     @NotNull
     public String getErrorCode() {
+        if (errorCode == null) {
+            String unqualified = otherAttributes.get(new QName("errorCode"));
+            if (unqualified != null) {
+                return unqualified;
+            }
+        }
         return errorCode;
     }
 
@@ -225,6 +238,8 @@ public class Error
 
     /**
      * Gets the value of the severity property.
+     *
+     * <p>Manually patched: same unqualified-attribute fallback as {@link #getErrorCode()}.
      * 
      * @return
      *     possible object is
@@ -233,6 +248,12 @@ public class Error
      */
     @NotNull
     public SeverityType getSeverity() {
+        if (severity == null) {
+            String unqualified = otherAttributes.get(new QName("severity"));
+            if (unqualified != null) {
+                return SeverityType.fromValue(unqualified);
+            }
+        }
         return severity;
     }
 
@@ -252,6 +273,8 @@ public class Error
 
     /**
      * Gets the value of the location property.
+     *
+     * <p>Manually patched: same unqualified-attribute fallback as {@link #getErrorCode()}.
      * 
      * @return
      *     possible object is
@@ -259,6 +282,9 @@ public class Error
      *     
      */
     public String getLocation() {
+        if (location == null) {
+            return otherAttributes.get(new QName("location"));
+        }
         return location;
     }
 

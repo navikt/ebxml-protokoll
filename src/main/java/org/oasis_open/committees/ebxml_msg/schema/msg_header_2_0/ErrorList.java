@@ -150,6 +150,14 @@ public class ErrorList
 
     /**
      * Gets the value of the highestSeverity property.
+     *
+     * <p>Manually patched: the XSD declares attributeFormDefault="qualified", but real-world senders
+     * consistently emit this attribute unqualified (e.g. highestSeverity="Warning" instead of
+     * eb:highestSeverity="Warning"). Such unqualified attributes fail to bind to the typed
+     * {@link #highestSeverity} field and are instead captured by the {@link #otherAttributes} catch-all
+     * ({@code @XmlAnyAttribute}). Fall back to that map so both qualified and unqualified senders work,
+     * instead of throwing an NPE from the {@code @NotNull} contract below. See Error.java for the same
+     * fix on errorCode/severity/location.
      * 
      * @return
      *     possible object is
@@ -158,6 +166,12 @@ public class ErrorList
      */
     @NotNull
     public SeverityType getHighestSeverity() {
+        if (highestSeverity == null) {
+            String unqualified = otherAttributes.get(new QName("highestSeverity"));
+            if (unqualified != null) {
+                return SeverityType.fromValue(unqualified);
+            }
+        }
         return highestSeverity;
     }
 
